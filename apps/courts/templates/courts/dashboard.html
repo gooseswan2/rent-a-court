@@ -1,0 +1,18 @@
+{% extends 'courts/base.html' %}
+{% block content %}
+<table style="width:100%">
+    <tr>
+      <th>Court</th>
+      <th>Start time</th>
+      <th>End time</th>
+    </tr>
+    {% for x in court_times %}
+   <tr>
+       <td>{{x.court.name}}</td>
+       <td>{{x.timein}}</td>
+       <td>{{x.timeout}}</td>
+   </tr>
+{% endfor %}
+  </table>
+
+{% endblock %}

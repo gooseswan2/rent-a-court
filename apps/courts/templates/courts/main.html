@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Find a Court
+        </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/courts.css' %}">
+    </head>
+    <body>
+        <div id="container">
+            {% for x in court %}
+                <a href="/court/{{x.id}}">{{x.name}}</a>
+            {% endfor %}
+        </div>
+    </body>
+</html>

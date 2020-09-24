@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/courts.css' %}">
+    </head>
+    <body>
+        <div id="container">
+            <div>{{ one_court.name }}</div>
+            <div>{{ one_court.location}}</div>
+            <div>{{ one_court.description }}</div>
+        </div>
+    </body>
+</html>

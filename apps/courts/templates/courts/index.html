@@ -1,0 +1,26 @@
+	{% extends 'courts/base.html' %}
+	{% block content %}
+        <div id="container">
+            <div>
+                <div class="inline"><h1>FIND A COURT</h1></div>
+                <div class="red">{{message}}</div>
+            </div>
+            <div>
+                Do you like basketball? Then, <a href="/courts/court/select/">find a court</a> and play!!!!
+            </div>
+        </div>
+        <div class="form-popup" id="myForm">
+            <form action="/users/login/" method="POST" class="form-container">
+              <h1>Login</h1>
+              {% csrf_token %}
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+          
+              <label for="pwd"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="pwd" required>
+          
+              <button type="submit" class="btn">Login</button>
+              <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+	{% endblock %}

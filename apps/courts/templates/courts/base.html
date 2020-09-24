@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Find a Court
+        </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/courts.css' %}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    </head>
+    <body>
+	<script>
+           function openForm() {
+		   document.getElementById("myForm").style.display = "block";
+	   }
+           function closeForm() {
+		   document.getElementById("myForm").style.display = "none";
+	   }
+        </script>
+      
+        <div id="container">
+	       <div id="nav">
+	          <ul>
+					<li><a href="/courts/">Home</a></li>
+					<li><a href="/courts/court/select/">Select a Court</a></li>
+					<li><a href="/courts/dashboard/">Dashboard</a></li>
+					{% if request.session.user_id %} 
+					<li><a href="/users/logout/">Logout</a></li>
+					{% else %}
+					<li><a href="#" onclick="openForm()">Login</a></li>
+					{% endif %}
+			  </ul>
+	   	   </div>
+<!--            {% for x in court %}
+                <a href="/court/{{x.id}}">{{x.name}}</a>
+            {% endfor %}
+-->
+       {% block content %}
+	   {% endblock %}
+        </div>
+    </body>
+</html>

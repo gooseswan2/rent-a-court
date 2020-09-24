@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Find a Court
+        </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/courts.css' %}">
+    </head>
+    <body>
+        <div id="container">
+            <div>
+                    <form action="/users/register/" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for='first_name'>First Name</label>
+                            <input type="text" name="first_name" id="fname" class="fname">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" name="last_name" id="lname" class="lname">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" class="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password</label>
+                            <input type="password" name="pwd" id="pwd" class="pwd">
+                        </div>
+                        <div class="form-group">
+                                <label for="cpwd">Confirm PW</label>
+                                <input type="password" name="cpwd" id="cpwd">
+                        </div>
+                        <input type="submit" value="Register">
+                    </form>
+            </div>
+        </div>
+    </body>
+</html>
