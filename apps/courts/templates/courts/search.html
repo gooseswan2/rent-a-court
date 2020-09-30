@@ -1,0 +1,10 @@
+{% extends 'courts/base.html' %}
+{% block content %}
+<div>
+    <form action="/courts/search/zcode/" method="POST">
+        {% csrf_token %}
+        <input type="text">
+        <button>Enter</button>
+    </form>
+</div>
+{% endblock %}

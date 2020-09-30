@@ -5,7 +5,10 @@ from .models import User, UserManager
 # Create your views here.
 
 def registration(request):
-    return render(request, "users/registration.html")
+    if 'user_id' in request.session:
+        return redirect('/courts/')
+    else:
+        return render(request, "/users/registration.html")
 
 def register(request):
     errors = User.objects.validate(request.POST)
@@ -14,7 +17,7 @@ def register(request):
             messages.error(request, error)
     else:
         User.objects.create_user(request.POST)
-    return redirect('/courts/main/')
+    return redirect('/courts/')
 
 def login(request):
     valid, result = User.objects.login(request.POST)
@@ -27,4 +30,4 @@ def login(request):
 
 def logout(request):
     request.session.clear()
-    return render(request, 'courts/index.html')
+    return render(request, '/courts/')

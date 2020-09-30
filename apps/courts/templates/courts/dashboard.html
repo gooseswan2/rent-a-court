@@ -5,12 +5,14 @@
       <th>Court</th>
       <th>Start time</th>
       <th>End time</th>
+      <th>Amount</th>
     </tr>
     {% for x in court_times %}
-   <tr>
-       <td>{{x.court.name}}</td>
+       <tr>
+       <td><a href="/courts/court/{{ x.court.id }}">{{x.court.name}}</a></td>
        <td>{{x.timein}}</td>
        <td>{{x.timeout}}</td>
+       <td>{{x.total_price}}</td>
    </tr>
 {% endfor %}
   </table>

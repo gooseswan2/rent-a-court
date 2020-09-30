@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Find a Court
-        </title>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'css/courts.css' %}">
-    </head>
-    <body>
+{% extends 'courts/base.html' %}
+{% block content %}
         <div id="container">
-            <div>
+            <div><h1>Registration</h1>
                     <form action="/users/register/" method="POST">
                         {% csrf_token %}
                         <div class="form-group">
@@ -36,5 +28,4 @@
                     </form>
             </div>
         </div>
-    </body>
-</html>
+{% endblock%}

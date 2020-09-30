@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.courts',
     'apps.users',
-    'rest_framework',
     'schedule',
     'djangobower',
+    'localflavor',
 ]
 
 REST_FRAMEWORK = {

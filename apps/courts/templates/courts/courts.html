@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'css/courts.css' %}">
-    </head>
-    <body>
+{% extends 'courts/base.html' %}
+{% block content %}
         <div id="container">
             <div>{{ one_court.name }}</div>
             <div>{{ one_court.location}}</div>
             <div>{{ one_court.description }}</div>
         </div>
-    </body>
-</html>
+{% endblock %}
